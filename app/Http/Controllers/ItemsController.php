@@ -49,11 +49,19 @@ class ItemsController extends Controller
     {
         // バリデーション
         $request->validate([
+            'purchase_date' => 'required|max:10',
+            'category' => 'required|max:10',
+            'maker' => 'required|max:20',
+            'product_number' => 'required|max:20',
             'content' => 'required|max:255',
         ]);
         
         // アイテムを作成
         $item = new Item;
+        $item->purchase_date = $request->purchase_date;
+        $item->category = $request->category;
+        $item->maker = $request->maker;
+        $item->product_number = $request->product_number;
         $item->content = $request->content;
         $item->save();
 
@@ -106,12 +114,20 @@ class ItemsController extends Controller
     {
         // バリデーション
         $request->validate([
+            'purchase_date' => 'required|max:10',
+            'category' => 'required|max:10',
+            'maker' => 'required|max:20',
+            'product_number' => 'required|max:20',
             'content' => 'required|max:255',
         ]);
         
         // idの値でアイテムを検索して取得
         $item = Item::findOrFail($id);
         // アイテムを更新
+        $item->purchase_date = $request->purchase_date;
+        $item->category = $request->category;
+        $item->maker = $request->maker;
+        $item->product_number = $request->product_number;
         $item->content = $request->content;
         $item->save();
 
