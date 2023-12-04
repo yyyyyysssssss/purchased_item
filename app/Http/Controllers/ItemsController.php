@@ -47,6 +47,11 @@ class ItemsController extends Controller
      */
     public function store(Request $request)
     {
+        // バリデーション
+        $request->validate([
+            'content' => 'required|max:255',
+        ]);
+        
         // アイテムを作成
         $item = new Item;
         $item->content = $request->content;
@@ -99,9 +104,14 @@ class ItemsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // バリデーション
+        $request->validate([
+            'content' => 'required|max:255',
+        ]);
+        
         // idの値でアイテムを検索して取得
         $item = Item::findOrFail($id);
-        // メッセージを更新
+        // アイテムを更新
         $item->content = $request->content;
         $item->save();
 
