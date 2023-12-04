@@ -7,7 +7,7 @@
     </div>
 
     @if (isset($items))
-        <table class="table table-zebra w-full my-4">
+        <table class="table active w-full my-4">
             <thead>
                 <tr>
                     <th>id</th>

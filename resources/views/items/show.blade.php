@@ -34,14 +34,14 @@
     </table>
 
     {{-- アイテム編集ページへのリンク --}}
-    <a class="btn btn-outline" href="{{ route('items.edit', $item->id) }}">修正</a>
+    <a class="btn bg-violet-800" href="{{ route('items.edit', $item->id) }}">修正</a>
 
     {{-- アイテム削除フォーム --}}
     <form method="POST" action="{{ route('items.destroy', $item->id) }}" class="my-2">
         @csrf
         @method('DELETE')
         
-        <button type="submit" class="btn btn-error btn-outline" 
+        <button type="text" class="btn btn-secondary normal-case" 
             onclick="return confirm('id = {{ $item->id }} を削除します。よろしいですか？')">削除</button>
     </form>
 

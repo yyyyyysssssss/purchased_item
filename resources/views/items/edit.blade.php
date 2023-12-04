@@ -43,10 +43,11 @@
                     <label for="content" class="label">
                         <span class="label-text">コメント:</span>
                     </label>
-                    <input type="text" name="content" value="{{ $item->content }}" class="input input-bordered w-full">
+                    <textarea type="text" name="content" value="{{ $item->content }}" class="textarea textarea-bordered w-full"></textarea>
+                    </div>
                 </div>
 
-            <button type="submit" class="btn btn-primary btn-outline">更新</button>
+            <button type="text" class="btn bg-violet-800 normal-case">更新</button>
         </form>
     </div>
 

@@ -42,10 +42,10 @@
                     <label for="content" class="label">
                         <span class="label-text">コメント:</span>
                     </label>
-                    <input type="text" name="content" class="input input-bordered w-full">
+                    <textarea type="text" name="content" class="textarea textarea-bordered w-full"></textarea>
                 </div>
 
-            <button type="submit" class="btn btn-primary btn-outline">新規作成</button>        
+            <button type="text" class="btn bg-violet-800 normal-case">新規作成</button>        
         </form>
     </div>
 @endsection
